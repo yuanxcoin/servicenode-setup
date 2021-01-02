@@ -1,0 +1,12 @@
+[Unit]
+Description=italo service node
+After=network-online.target
+[Service]
+Type=simple
+User=root
+ExecStartPre=/bin/sh -c "systemctl set-environment HOST_IP=$(hostname -i)"
+ExecStart=/bin/sh -c "~/bin/italod --non-interactive --service-node --service-node-public-ip ${HOST_IP}" 
+Restart=always
+RestartSec=30s
+[Install]
+WantedBy=multi-user.target
