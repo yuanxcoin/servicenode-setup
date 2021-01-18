@@ -6,7 +6,7 @@
 ## Installation
 
 ### Pull this script from github
-`git clone https://github.com/gyuanxcoin/service-node-setup  servicenode`
+`git clone https://github.com/yuanxcoin/service-node-setup  servicenode`
 
 ### Go into newly created folder
 
