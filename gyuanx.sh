@@ -14,25 +14,25 @@ servicenode_install () {
     echo "Export Not Needed Ubuntu 20.04"
   fi
   
-  git clone --recursive 'https://github.com/italocoin-project/italo.git' italo && cd italo
+  git clone --recursive 'https://github.com/yuanxcoin/gyuanx-core.git' gyuanx-core && cd gyuanx-core
   git submodule init && git submodule update
   make release
 
-  cd build/Linux/dev/release && sudo cp -r bin ~/
+  cd build/Linux/master/release && sudo cp -r bin ~/
   
   sudo rm /etc/systemd/system/service.service
-  sudo cp ~/Italo/service.service /etc/systemd/system/
+  sudo cp ~/servicenode-setup/service.service /etc/systemd/system/
   sudo systemctl daemon-reload
   sudo systemctl enable service.service
 }
 
 prepare_registration () {
-  ~/bin/italod prepare_registration
+  ~/bin/gyuanxd prepare_registration
 }
 
 start () {
   systemctl start service.service
-  echo Service node started to check it works use bash italo.sh logging
+  echo Service node started to check it works use bash gyuanx.sh logging
 }
 
 status () {
@@ -40,7 +40,7 @@ status () {
 }
 
 stop_the_nodes () {
-  echo Stopping XTA node
+  echo Stopping gyuanx node
   sudo systemctl stop service.service
 }
 

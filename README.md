@@ -1,45 +1,45 @@
 
-# Italo service node easy setup guide
+# Gyuanx service node easy setup guide
 
 
 
 ## Installation
 
 ### Pull this script from github
-`git clone https://github.com/italocoin-project/service-node-quick-start Italo`
+`git clone https://github.com/gyuanxcoin/service-node-setup  servicenode`
 
 ### Go into newly created folder
 
-`cd Italo`
+`cd servicenode`
 
 ### Run install script
 
-`bash italo.sh install`
+`bash gyuanx.sh install`
 
 ### To start service node
 
-`bash italo.sh start`
+`bash gyuanx.sh start`
 
 ### To stop service node
 
-`bash italo.sh stop`
+`bash gyuanx.sh stop`
 
 ## Additional commands:
 
 ### To check service status:
 
-`bash italo.sh status`
+`bash gyuanx.sh status`
 
 ### To check how it is working:
 
-`bash italo.sh logging`
+`bash gyuanx.sh logging`
 
 ### To generate staking transaction:
 
-`bash italo.sh prepare_registration`
+`bash gyuanx.sh prepare_registration`
 
 ### To upgrade node:
 
-`bash italo.sh git_pull`
+`bash gyuanx.sh git_pull`
  then
-`bash italo.sh update_daemon`
+`bash gyuanx.sh update_daemon`
