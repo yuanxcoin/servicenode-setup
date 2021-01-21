@@ -16,9 +16,12 @@ servicenode_install () {
   
   git clone --recursive 'https://github.com/yuanxcoin/gyuanx-core.git' gyuanx-core && cd gyuanx-core
   git submodule init && git submodule update
-  make release
+  mkdir build
+  cd build
+  cmake .. -DBUILD_STATIC_DEPS=ON -DCMAKE_C_COMPILER=gcc-8 -DCMAKE_CXX_COMPILER=g++-8 -DARCH=x86-64 
+  make
 
-  cd build/Linux/master/release && sudo cp -r bin ~/
+  sudo cp -r bin ~/
   
   sudo rm /etc/systemd/system/service.service
   sudo cp ~/servicenode-setup/service.service /etc/systemd/system/
