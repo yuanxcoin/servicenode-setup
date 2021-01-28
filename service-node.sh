@@ -16,7 +16,7 @@ sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 80 --slave /u
 
 #sudo update-alternatives --config gcc
 
-sudo apt install -y  curl git wget libssl-dev libsodium-dev wget pkg-config autoconf libtool  libsystemd-dev libgtest-dev libunbound-dev nettle-dev libevent-dev libminiupnpc-dev libunwind8-dev libreadline-dev libhidapi-dev libusb-1.0-0-dev libprotobuf-dev protobuf-compiler python3 libsqlite3-dev qttools5-dev libcurl4-openssl-dev
+sudo apt install -y  curl git wget libssl-dev libsodium-dev wget pkg-config autoconf libtool  gperf libsystemd-dev libgtest-dev libunbound-dev nettle-dev libevent-dev libminiupnpc-dev libunwind8-dev libreadline-dev libhidapi-dev libusb-1.0-0-dev libprotobuf-dev protobuf-compiler python3 libsqlite3-dev qttools5-dev libcurl4-openssl-dev
 
 export  CC=gcc-8 
 export CXX=g++-8
@@ -37,6 +37,8 @@ cd boost_${BOOST_VERSION}
 sudo  ./b2 install
 export  BOOST_ROOT /usr/local/include/boost
 
+cd ..
+
 export  OPENSSL_VERSION=1.1.1c
 export OPENSSL_HASH=f6fb3079ad15076154eda9413fed42877d668e7069d9b87396d0804fdb3f4c90
      curl -s -O https://www.openssl.org/source/openssl-${OPENSSL_VERSION}.tar.gz 
@@ -49,6 +51,8 @@ export OPENSSL_HASH=f6fb3079ad15076154eda9413fed42877d668e7069d9b87396d0804fdb3f
      make install
  export OPENSSL_ROOT_DIR=/usr/local/openssl-${OPENSSL_VERSION}
 
+cd ..
+
 # Sodium
  export  SODIUM_VERSION=1.0.18
  export SODIUM_HASH=4f5e89fa84ce1d178a6765b8b46f2b6f91216677
@@ -60,7 +64,7 @@ export OPENSSL_HASH=f6fb3079ad15076154eda9413fed42877d668e7069d9b87396d0804fdb3f
      make 
      make check 
      make install
-
+cd ..
 
 
  git clone https://github.com/yuanxcoin/gyuanx-storage-server.git --depth=1 -b dev
@@ -78,12 +82,9 @@ export OPENSSL_HASH=f6fb3079ad15076154eda9413fed42877d668e7069d9b87396d0804fdb3f
      cmake --build . -- -j1
  sudo make install
 
+cd ..
 echo -n "Service Node successfully Installed"
-
-pause 2
-
 echo -n "Installation of the  gyuanx core begins"
-
 
 git clone --recursive https://github.com/yuanxcoin/gyuanx-core 
 
