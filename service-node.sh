@@ -6,7 +6,7 @@ sudo apt update -y && sudo apt upgrade -y && sudo apt autoremove -y
 
 sudo apt install software-properties-common
 
-sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
+sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
 
 sudo apt update -y
 
