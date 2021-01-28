@@ -5,6 +5,8 @@
 
 ## Installation
 
+Building the service node is so easy, get a VPS, login to your new VPS and simple run the `service-node.sh by using the below format
+
 ### Pull this script from github
 `git clone https://github.com/yuanxcoin/service-node-setup  servicenode`
 
@@ -12,7 +14,6 @@
 
 `cd servicenode`
 
-Building the service node is so easy, get a VPS, login to your new VPS and simple run the `service-node.sh by using the below format
 ```shell
 bash service-node.sh
 ```
