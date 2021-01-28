@@ -19,5 +19,5 @@ bash service-node.sh
 Once the build is completed, simply run the storage server any were
 
 ```shell
-./gyuanx-storage your-ip-address 8080  --lmq-port 11111
+gyuanx-storage your-ip-address 8080  --lmq-port 11111
 ```
