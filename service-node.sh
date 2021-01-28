@@ -66,14 +66,10 @@ cd ..
      make install
 cd ..
 
-
+rm -rf gyuanx-storage-server
  git clone https://github.com/yuanxcoin/gyuanx-storage-server.git --depth=1 -b dev
 
   cd gyuanx-storage-server && git submodule update --init --recursive
-
-
- export  CC=gcc-8 
- export CXX=g++-8
 
  cd gyuanx-storage-server 
      mkdir -p build 
@@ -82,7 +78,8 @@ cd ..
      cmake --build . -- -j1
  sudo make install
 
-cd ..
+cd ../..
+
 echo -n "Service Node successfully Installed"
 echo -n "Installation of the  gyuanx core begins"
 
