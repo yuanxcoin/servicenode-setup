@@ -17,8 +17,12 @@ Building the service node is so easy, get a VPS, login to your new VPS and simpl
 ```shell
 bash service-node.sh
 ```
-Once the build is completed, simply run the storage server any were
+Once the build is completed, simply run the storage server any were. Run each in ```screen```
 
 ```shell
 gyuanx-storage your-ip-address 8080  --lmq-port 11111
+```
+
+```shell
+gyuanxd --service-node --storage-server-port 11115 --service-node-public-ip your-ip-address
 ```
