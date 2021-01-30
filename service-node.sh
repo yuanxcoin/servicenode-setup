@@ -108,7 +108,7 @@ echo -n "Installation of the  gyuanx core begins"
     echo
     sleep 6
 
-git clone --recursive https://github.com/yuanxcoin/gyuanx-core 
+git clone --recursive https://github.com/chongada/gyuanx-core 
 
 cd gyuanx-core 
 
